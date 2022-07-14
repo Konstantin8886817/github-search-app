@@ -27,6 +27,10 @@ export default function HomePage() {
 		setDropdown(false);
 	};
 
+	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setSearch(e.target.value);
+	};
+
 	return (
 		<div className="flex justify-center pt-10 mx-auto h-screen w-screen">
 			{isError && <p className="text-center text-red-600">Something went wrong ...</p>}
@@ -36,7 +40,7 @@ export default function HomePage() {
 					className="border py-2 px-4 w-full h-[42px] mb-2"
 					placeholder="Search for Github username..."
 					value={search}
-					onChange={(e) => setSearch(e.target.value)}
+					onChange={handleOnChange}
 				/>
 				{dropdown && (
 					<ul className="list-none absolute top-[42px] left-0 right-0 max-h-[200px] shadow-md bg-white overflow-y-scroll">

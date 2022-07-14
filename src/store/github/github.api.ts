@@ -24,7 +24,7 @@ export const githubApi = createApi({
             })
         }),
         createUser: build.mutation<any, void>({
-            query: () => ''
+            query: () => '' //should be used when server side exist
         })
     })
 })
